@@ -5,7 +5,9 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_bootstrap import Bootstrap
 from config import app_config
+from flask_wtf.csrf import CSRFProtect
 
+csrf = CSRFProtect()
 db = SQLAlchemy()
 login_manager = LoginManager()
 
@@ -24,6 +26,7 @@ def create_app(config_name):
     app.app_context().push()
 
     db.init_app(app)
+    csrf.init_app(app)
     print(db.engine.pool.status())
     Bootstrap(app)
     # app.app_context().push()
