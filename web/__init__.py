@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_bootstrap import Bootstrap
-# from web.env_config import app_config
+from config import app_config
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -12,7 +12,7 @@ login_manager = LoginManager()
 
 def create_app(config_name):
     app = Flask(__name__)
-    # app.config.from_object(app_config[config_name])
+    app.config.from_object(app_config[config_name])
     # from web.models import db, login_manager
     app.config.from_pyfile('config.py')
     app.config['SQLALCHEMY_POOL_RECYCLE'] = 300
