@@ -1,0 +1,22 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block body %}
+<div class="content-section">
+ <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="center">
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+            <!form method="POST"  action="{{ url_for('add_product') }}">
+             <!   {{form.csrf_token}}
+             <!   <!p>{{ form.name.label }} {{ form.name }}<!/p>
+                <!p>{{ form.description.label }} {{ form.description }}<!/p>
+                <!p>{{ form.submit }}<!/p>
+            <!/form>

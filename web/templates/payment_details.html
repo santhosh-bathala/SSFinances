@@ -1,0 +1,60 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block body %}
+    <div class="content-section">
+        <button onclick="history.back()">Go Back</button>
+      <div class="outer">
+        <div class="middle">
+          <div class="inner">
+            <br/>
+            {{ utils.flashed_messages() }}
+            <br/>
+            <h1 style="text-align:center;">Customer: {{ customer.name }} </h1>
+              <div style="text-align:center;" >
+                <a  href="{{ url_for('admin.add_payment', id=customer.id, loan_type= loan.loan_type) }}" class="btn btn-default btn-lg">
+                    <i class="fa fa-plus"></i>
+                    Add Payment
+                </a>
+              </div>
+                <hr class="intro-divider">
+                <div class="center">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="15%">Loan Number</th>
+                                <th width="15%">Loan Type</th>
+                                <th width="15%">Installment Number</th>
+                                <th width="15%">EMI Amount</th>
+                                <th width="15%"> Interest Amount </th>
+                                <th width="15%"> Edit </th>
+                                <th width="15%"> Delete </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for payment in payments %}
+                            <tr>
+                                <td>{{ payment.loan_number }}</td>
+                                <td>{{ payment.loan_type }}</td>
+                                <td>{{ payment.installment_number }}</td>
+                                <td>{{ payment.installment_amount }}</td>
+                                <td> {{ payment.installment_interest}}</td>
+                                <td>
+                                    <a href="">
+                                        <i class="fa fa-pencil"></i> Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ {% endblock %}
