@@ -63,5 +63,9 @@ def create_app(config_name):
     @app.route('/500')
     def error():
         abort(500)
-
+    
+    @app.errorhandler(OperationalError)
+    def handle_operational_error(error):
+        db.session.rollback()
+        db.session.close_all()
     return app
