@@ -24,7 +24,7 @@ def add_customer():
         customer = Customer(name=form.username.data, phone=form.phone.data, desc=form.desc.data, email=form.email.data)
         db.session.add(customer)
         db.session.commit()
-        return redirect(url_for('list_customers'))
+        return redirect(url_for('admin.list_customers'))
     return render_template("customer.html", form=form)
 
 
