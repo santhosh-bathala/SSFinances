@@ -68,5 +68,6 @@ def create_app(config_name):
     @app.errorhandler(OperationalError)
     def handle_operational_error(error):
         db.session.rollback()
-        db.session.close_all()
+        db.session.expunge_all()
+        db.session.close()
     return app
