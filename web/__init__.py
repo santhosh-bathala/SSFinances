@@ -26,6 +26,7 @@ def create_app(config_name):
     #    db.init_app(app)
     app.app_context().push()
     db.init_app(app)
+    db.create_all()
     csrf.init_app(app)
     # print(db.engine.pool.status())
     Bootstrap(app)
