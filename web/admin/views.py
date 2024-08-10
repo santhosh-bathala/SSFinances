@@ -15,6 +15,10 @@ def check_admin():
     if not current_user.is_admin:
         abort(403)
 
+@admin.errorhandler(OperationalError)
+def handle_operational_error(error):
+    db.session.rollback()
+    db.session.close_all()
 
 @admin.route("/add_customer", methods=["GET", "POST"])
 @login_required
