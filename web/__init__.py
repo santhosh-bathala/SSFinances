@@ -1,11 +1,12 @@
 from flask import Flask, render_template, url_for, abort
-# import pymysql
+import pymysql
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_bootstrap import Bootstrap
 from config import app_config
 from flask_wtf.csrf import CSRFProtect
+from sqlalchemy.exc import OperationalError
 
 csrf = CSRFProtect()
 db = SQLAlchemy()
