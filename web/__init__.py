@@ -21,7 +21,7 @@ def create_app(config_name):
     app.config['SQLALCHEMY_EXPIRE_ON_COMMIT'] = False
     app.config['SQLALCHEMY_ECHO'] = True
     app.config['SQLALCHEMY_POOL_RECYCLE'] = 3600
-    app.config['SQLALCHEMY_POOL_TIMEOUT'] = 10
+    app.config['SQLALCHEMY_POOL_TIMEOUT'] = 180
     app.config['SQLALCHEMY_POOL_PRE_PING'] = True
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     # with app.app_context():
