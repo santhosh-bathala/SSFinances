@@ -24,8 +24,8 @@ class AddProduct(FlaskForm):
 
 class AssignLoan(FlaskForm):
     # customers = QuerySelectField(query_factory=lambda: Customer.query.all(), get_label="name")
-    # products = QuerySelectField(query_factory=lambda: Product.query.all(), get_label="name")
-    loan_type = SelectField('loan_type', choices=[(product.name, product.name) for product in Product.query.all()])
+    products = QuerySelectField(query_factory=lambda: Product.query.all(), get_label="name")
+    # loan_type = SelectField('loan_type', choices=[(product.name, product.name) for product in Product.query.all()])
     # loan_type = StringField('loan_type', validators=[DataRequired()])
     loan_amount = FloatField('loan_amount', validators=[DataRequired()])
     roi = FloatField('roi', validators=[DataRequired()])
