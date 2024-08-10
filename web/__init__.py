@@ -23,7 +23,9 @@ def create_app(config_name):
     app.config['SQLALCHEMY_POOL_RECYCLE'] = 28800
     # app.config['SQLALCHEMY_POOL_TIMEOUT'] = 180
     app.config['SQLALCHEMY_POOL_PRE_PING'] = True
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_CONNECT_TIMEOUT'] = 90
+    app.config['SQLQLCHEMY_ALLOW_PERSISTENT']=1
     # with app.app_context():
     #    db.init_app(app)
     app.app_context().push()
