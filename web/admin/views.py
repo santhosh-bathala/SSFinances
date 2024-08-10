@@ -60,8 +60,8 @@ def assign_loan(id):
     customer = Customer.query.get_or_404(id)
     form = AssignLoan()
     if form.validate_on_submit():
-        # loan_type = form.products.data.name
-        loan_type = form.loan_type.data
+        loan_type = form.products.data.name
+        # loan_type = form.loan_type.data
         loan_amount = form.loan_amount.data
         roi = form.roi.data
         emi = form.emi.data
