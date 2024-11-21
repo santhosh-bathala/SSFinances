@@ -30,8 +30,10 @@ def add_customer():
 
 @admin.route("/list_customers", methods=["GET", "POST"])
 @login_required
-def list_customers():
-    customers = Customer.query.all()
+def list_customers(page=1):
+    per_page = 10
+    # customers = Customer.query.all()
+    customers = Customer.query.all().paginate(page,per_page,error_out=False)
     return render_template("customers.html", customers=customers)
 
 
