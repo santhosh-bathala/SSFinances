@@ -28,7 +28,7 @@ def add_customer():
     return render_template("customer.html", form=form)
 
 
-@admin.route("/list_customers", methods=["GET", "POST"])
+@admin.route("/list_customers/<int:page>", methods=["GET", "POST"])
 @login_required
 def list_customers(page=1):
     per_page = 10
