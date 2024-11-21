@@ -56,12 +56,12 @@
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination">
                                             {% if customers.has_prev %}
-                                                <li class="page-item"> <a class="page-link" href="{{ url_for('list_customers', page=customers.prev_num) }}">Previous</a></li>
+                                                <li class="page-item"> <a class="page-link" href="{{ url_for('admin.list_customers', page=customers.prev_num) }}">Previous</a></li>
                                             {% else %}
                                               <li class="page-item"><a class="page-link btn disabled" href="#">Previous</a></li>
                                             {% endif %}
                                             {% if customers.has_next %}
-                                              <li class="page-item"> <a class="page-link" href="{{ url_for('list_customers', page=customers.next_num) }}">Next</a></li>
+                                              <li class="page-item"> <a class="page-link" href="{{ url_for('admin.list_customers', page=customers.next_num) }}">Next</a></li>
                                             {% else %}
                                               <li class="page-item"><a class="page-link btn disabled" href="#">Next</a></li>
                                             {% endif %}
