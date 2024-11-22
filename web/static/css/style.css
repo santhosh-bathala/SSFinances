@@ -653,7 +653,7 @@ p.copyright {
 .outer {
     display: table;
     position: absolute;
-    height: 70%;
+    height: 30%;
     width: 100%;
 }
 
