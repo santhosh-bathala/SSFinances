@@ -33,23 +33,23 @@
                                 <tbody>
                                     {% for customer in customers %}
                                     <tr>
-                                        <td style="font-size:12pt;"> {{ customer.id }}</td>
-                                        <td style="font-size:12pt;"> {{ customer.name }}</td>
-                                        <td style="font-size:12pt;"> {{ customer.phone }}</td>
-                                        <td style="font-size:12pt;">
+                                        <td style="font-size:12pt;"> <small> {{ customer.id }} </small></td>
+                                        <td style="font-size:12pt;"> <small> {{ customer.name }} </small></td>
+                                        <td style="font-size:12pt;"> <small> {{ customer.phone }} </small></td>
+                                        <td style="font-size:12pt;"> <small>
                                             <a href="{{ url_for('admin.customer_details', id=customer.id) }}">
                                             <i class="fa fa-user-plus"></i> Loan Details
-                                            </a>
+                                            </a> </small>
                                         </td>
-                                        <td style="font-size:12pt;">
+                                        <td style="font-size:12pt;"> <small>
                                             <a href="">
                                                 <i class="fa fa-pencil"></i> Edit
-                                            </a>
+                                            </a> </small>
                                         </td>
-                                        <td style="font-size:12pt;">
+                                        <td style="font-size:12pt;"> <small>
                                             <a href="">
                                                 <i class="fa fa-trash"></i> Delete
-                                            </a>
+                                            </a> </small>
                                         </td>
                                     </tr>
                                     {% endfor %}
